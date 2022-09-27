@@ -35,5 +35,7 @@ EXPOSE 4200
 EXPOSE 2333
 
 RUN npm run deploy
+COPY start.sh ./
+RUN chmod u+x ./start.sh
 
-CMD nohup java -jar Lavalink.jar & disown; npm run start
+CMD ./start.sh
